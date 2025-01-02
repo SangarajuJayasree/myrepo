@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chessbord</title>
+    <style>
+      .chessboard{
+        width:240px;
+        height:240px;
+        display:grid;
+        grid-template-rows:repeat(8,30px);
+        grid-template-columns:repeat(8,30px);
+      }
+      .cell{
+        width:30px;
+        height:30px;
+        line-height:30px;
+        font-weight:bold;
+        text-align:center;
+      }
+      .white{
+        background-color:#f0d9b5;
+      }
+      .black{
+        background-color:#b58863;
+        color:white;
+      }
+    </style>
+    <body>
+      <h2>Chessbord</h2>
+      <div class="chessboard">
+        <?php
+        $isWhite=true;
+        for($row=1;$row<=8;$row++){
+          for($col=1;$col<=8;$col++){
+            $cellclass=$isWhite?"white":"black";
+            echo "<div class='cell $cellclass'>$row,$col</div>";
+          }
+          $isWhite=!$isWhite;
+        }
+        $isWhite=!$isWhite;
+        ?>
+      </div>
+  </head>
+</html>

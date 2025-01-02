@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: beige;
+
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #hi {
+            height: 20px;
+            font-size: 20px;
+            padding-left: 9px;
+
+        }
+
+        .li {
+            padding-top: 10px;
+            font-size: 34px;
+            margin: 100px;
+
+        }
+
+        ul {
+
+            font-size: 34px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <br><br>
+    <h2>To Do App</h2>
+    <br>
+    <form class="formm" onsubmit="return addtask()">
+        <input type="text" id="hi" placeholder="Enter the task">
+        <input type="submit" value="AddTask">
+
+    </form>
+    <ul id="listed"></ul>
+
+    <script>
+        function addtask() {
+            let task = document.getElementById('hi').value;
+            let list = document.getElementById('listed');
+           
+
+            let list_item = document.createElement('li');
+            list_item.textContent = task;
+
+            list.appendChild(list_item);
+
+            list_item.addEventListener('click', function(){
+                list_item.style.textDecoration = "line-through";
+            });
+
+            document.getElementById('hi').value ="";
+
+            return false;
+
+
+        }
+
+    </script>
+</body>
+
+</html>
